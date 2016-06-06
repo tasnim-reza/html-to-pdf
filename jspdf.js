@@ -5,24 +5,78 @@ var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456
             var a = document.createElement("a");
             document.body.appendChild(a);
             a.style = "display: none";
-
+var text="Hello, world !";
             // base64 string
-            var base64str = 'JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwog' +
-    'IC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXMKICAv' +
-    'TWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0K' +
-    'Pj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCiAg' +
-    'L1Jlc291cmNlcyA8PAogICAgL0ZvbnQgPDwKICAgICAgL0YxIDQgMCBSIAogICAgPj4KICA+' +
-    'PgogIC9Db250ZW50cyA1IDAgUgo+PgplbmRvYmoKCjQgMCBvYmoKPDwKICAvVHlwZSAvRm9u' +
-    'dAogIC9TdWJ0eXBlIC9UeXBlMQogIC9CYXNlRm9udCAvVGltZXMtUm9tYW4KPj4KZW5kb2Jq' +
-    'Cgo1IDAgb2JqICAlIHBhZ2UgY29udGVudAo8PAogIC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJU' +
-    'CjcwIDUwIFRECi9GMSAxMiBUZgooSGVsbG8sIHdvcmxkISkgVGoKRVQKZW5kc3RyZWFtCmVu' +
-    'ZG9iagoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4g' +
-    'CjAwMDAwMDAwNzkgMDAwMDAgbiAKMDAwMDAwMDE3MyAwMDAwMCBuIAowMDAwMDAwMzAxIDAw' +
-    'MDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9v' +
-    'dCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G';
+            var binary = "%PDF-1.7\n\n"+
+"1 0 obj  % entry point\n"+
+"<<\n"+
+"  /Type /Catalog\n"+
+"  /Pages 2 0 R\n"+
+">>\n"+
+"endobj\n\n"+
+
+"2 0 obj\n"+
+"<<\n"+
+"  /Type /Pages\n"+
+"  /MediaBox [ 0 0 200 200 ]\n"+
+"  /Count 1\n"+
+"  /Kids [ 3 0 R ]\n"+
+">>\n"+
+"endobj\n\n"+
+
+"3 0 obj\n"+
+"<<\n"+
+"  /Type /Page\n"+
+"  /Parent 2 0 R\n"+
+"  /Resources <<\n"+
+"    /Font <<\n"+
+"      /F1 4 0 R \n"+
+"    >>\n"+
+"  >>\n"+
+"  /Contents 5 0 R\n"+
+">>\n"+
+"endobj\n\n"+
+
+"4 0 obj\n"+
+"<<\n"+
+"  /Type /Font\n"+
+"  /Subtype /Type1\n"+
+"  /BaseFont /Times-Roman\n"+
+">>\n"+
+"endobj\n\n"+
+
+"5 0 obj  % page content\n"+
+"<<\n"+
+"  /Length 44\n"+
+">>\n"+
+"stream\n"+
+"BT\n"+
+"70 50 TD\n"+
+"/F1 12 Tf\n"+
+"("+text+") Tj\n"+
+"ET\n"+
+"endstream\n"+
+"endobj\n\n"+
+
+"xref\n"+
+"0 6\n"+
+"0000000000 65535 f \n"+
+"0000000010 00000 n \n"+
+"0000000079 00000 n \n"+
+"0000000173 00000 n \n"+
+"0000000301 00000 n \n"+
+"0000000380 00000 n \n"+
+"trailer\n"+
+"<<\n"+
+"  /Size 6\n"+
+"  /Root 1 0 R\n"+
+">>\n"+
+"startxref\n"+
+"492\n"+
+"%%EOF";
             
             // decode base64 string, remove space for IE compatibility
-            var binary = atob(base64str.replace(/\s/g, ''));
+           //var binary = atob(base64str.replace(/\s/g, ''));
             
             // get binary length
             var len = binary.length;
